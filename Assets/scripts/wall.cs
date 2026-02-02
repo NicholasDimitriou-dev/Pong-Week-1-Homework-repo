@@ -28,6 +28,8 @@ public class wall : MonoBehaviour
             Debug.Log($"Left side scored, Score is {movemnet.leftScore}-{movemnet.rightScore}");
             if (movemnet.leftScore >= 11) {
                 Destroy(GameObject.FindGameObjectWithTag("ball"));
+                movemnet.leftScore = 0;
+                movemnet.rightScore = 0;
                 win.SetActive(true);
                 win.GetComponent<TextMeshProUGUI>().text = "Game Over, Left Paddle Wins";
             }else {
