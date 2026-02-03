@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 849102337}
   m_Layer: 0
   m_Name: PaddleTwo
-  m_TagString: Untagged
+  m_TagString: paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -815,7 +815,7 @@ GameObject:
   - component: {fileID: 1034403083}
   m_Layer: 0
   m_Name: Paddle
-  m_TagString: Untagged
+  m_TagString: paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -994,7 +994,7 @@ GameObject:
   - component: {fileID: 1515308151}
   m_Layer: 0
   m_Name: wall
-  m_TagString: Untagged
+  m_TagString: bottom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1121,7 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fd6ed068dcab04fb84f5a9c3e8ccc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingMovemntRight: 10
+  startingMovemntRight: 20
   angle: 1
 --- !u!135 &1518678999
 SphereCollider:
@@ -1206,7 +1206,7 @@ Transform:
   m_GameObject: {fileID: 1518678997}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.94, y: 0, z: 1.67}
+  m_LocalPosition: {x: 21.94, y: 0, z: -0.166}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1253,7 +1253,7 @@ GameObject:
   - component: {fileID: 1588767488}
   m_Layer: 0
   m_Name: wall (2)
-  m_TagString: Untagged
+  m_TagString: top
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
