@@ -380,9 +380,10 @@ MonoBehaviour:
   side: left
   score: {fileID: 2027047100}
   win: {fileID: 881143968}
-  ballPrefab: {fileID: 1518678997}
+  ball: {fileID: 1518678997}
   startingPoint: {fileID: 1718814911}
-  startingMovemntRight: 3
+  startingMovemntRight: 20
+  angle: 1
 --- !u!1 &849102336
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,9 +795,10 @@ MonoBehaviour:
   side: right
   score: {fileID: 2027047100}
   win: {fileID: 881143968}
-  ballPrefab: {fileID: 1518678997}
+  ball: {fileID: 1518678997}
   startingPoint: {fileID: 1718814911}
-  startingMovemntRight: 3
+  startingMovemntRight: 20
+  angle: 1
 --- !u!1 &1034403082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fd6ed068dcab04fb84f5a9c3e8ccc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingMovemntRight: 10
+  angle: 1
 --- !u!135 &1518678999
 SphereCollider:
   m_ObjectHideFlags: 0
