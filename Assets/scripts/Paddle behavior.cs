@@ -5,7 +5,7 @@ public class Paddlebehavior : MonoBehaviour
 {
     public string paddleName;
 
-    private float setForce = 5f;
+    private float setForce = 10f;
 
     private InputAction up;
     private InputAction down;

@@ -19,9 +19,17 @@ public class wall : MonoBehaviour
         win.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (score.fontSize > 36)
+        {
+            score.fontSize -= 0.01f; 
+        }
+    }
+
     private void OnCollisionEnter(Collision other)
     {
-        
+        score.fontSize += 3;
     if (side == "right") {
             //Destroy(GameObject.FindGameObjectWithTag("ball"));
             movemnet.leftScore++;
@@ -46,8 +54,7 @@ public class wall : MonoBehaviour
         if (side == "left") {
             //Destroy(GameObject.FindGameObjectWithTag("ball"));
             movemnet.rightScore++;
-            if (movemnet.rightScore > movemnet.leftScore)
-            {
+            if (movemnet.rightScore > movemnet.leftScore) {
                 score.color = Color.red;
             }
             if (movemnet.rightScore == movemnet.leftScore) {
@@ -68,15 +75,12 @@ public class wall : MonoBehaviour
     }
 
     void spawnRandom(){
-        float min = -2.1f;
-        float max = 3.33f;
-        float z = Random.Range(min,max)*3;
-        //Debug.Log(z);
+        
         Transform ballLocation = startingPoint.GetComponent<Transform>();
-        ball.transform.position = new Vector3(ballLocation.position.x,ballLocation.position.y,z);
-        min = -1;
-        max = 1;
-        z = Random.Range(min,max);
+        ball.transform.position = new Vector3(ballLocation.position.x,ballLocation.position.y,ballLocation.position.z);
+        float min = -5f;
+        float max = 5f;
+        float z = Random.Range(min,max);
         if (side == "right")
         {
             Vector3 force = new Vector3(startingMovemntRight, 0f,z);
