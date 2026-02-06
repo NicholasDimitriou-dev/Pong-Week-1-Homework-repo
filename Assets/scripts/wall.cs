@@ -14,16 +14,23 @@ public class wall : MonoBehaviour
     public float startingMovemntRight = 10f;
     public float angle = 1f;
     // Update is called once per frame
-    private void Start()
-    {
+    private void Start() {
+        score.color = Color.yellow;
         win.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision other)
     {
+        
     if (side == "right") {
             //Destroy(GameObject.FindGameObjectWithTag("ball"));
             movemnet.leftScore++;
+            if (movemnet.rightScore < movemnet.leftScore) {
+                score.color = Color.blue;
+            }
+            if (movemnet.rightScore == movemnet.leftScore) {
+                score.color = Color.yellow;
+            }
             score.text =  movemnet.leftScore.ToString()+"-" + movemnet.rightScore.ToString();
             Debug.Log($"Left side scored, Score is {movemnet.leftScore}-{movemnet.rightScore}");
             if (movemnet.leftScore >= 11) {
@@ -39,6 +46,13 @@ public class wall : MonoBehaviour
         if (side == "left") {
             //Destroy(GameObject.FindGameObjectWithTag("ball"));
             movemnet.rightScore++;
+            if (movemnet.rightScore > movemnet.leftScore)
+            {
+                score.color = Color.red;
+            }
+            if (movemnet.rightScore == movemnet.leftScore) {
+                score.color = Color.yellow;
+            }
             score.text =  movemnet.leftScore.ToString()+"-" + movemnet.rightScore.ToString();
             Debug.Log($"Right side scored, Score is {movemnet.leftScore}-{movemnet.rightScore}");
             if (movemnet.rightScore >= 11) {
