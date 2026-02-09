@@ -51,13 +51,14 @@ public class movemnet : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
+        Rigidbody rBody = GetComponent<Rigidbody>();
         if (other.gameObject.tag == "angle"){
             float min = -2f;
             float max = 2f;
             float z = Random.Range(min,max)*4;
             Debug.Log(z);
-            velocity.Scale(new Vector3(1f,1f,z));
-            Cooldown(other, cooldownTime);
+            velocity.Scale(new Vector3(1f,1f,-1f));
+            StartCoroutine(Cooldown(other, cooldownTime));
         }else if (other.gameObject.tag == "speed") {
             float min = 0.8f;
             float max = 1.4f;
@@ -66,6 +67,8 @@ public class movemnet : MonoBehaviour {
             velocity.Scale(new Vector3(z, 1f, 1f));
             StartCoroutine(Cooldown(other, cooldownTime));
         }
+
+        rBody.linearVelocity = velocity;
     }
 
     private IEnumerator Cooldown(Collider other, int seconds)
